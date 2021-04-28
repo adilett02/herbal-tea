@@ -2,6 +2,14 @@ nav.navbar {
     padding: 20px;
     position: absolute;
     width: 100%;
+    z-index: 9;
+    .nav-link {
+        color: #fff;
+        margin: 0 15px;
+    }
+    svg {
+        fill: #fff;
+    }
 }
 .logo {
     width: 70px;
