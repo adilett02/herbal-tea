@@ -1,0 +1,17 @@
+nav.navbar {
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+}
+.logo {
+    width: 70px;
+    svg {
+        width: 100%;
+        fill: $primaryColor;
+    }
+}
+@media (max-width: 576px) {
+    .logo {
+        width: 60px;
+    }
+}
