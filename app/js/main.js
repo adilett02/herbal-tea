@@ -1,16 +1,5 @@
 (function ($) {
   'use strict';
-  $('.nonloop-block-13').owlCarousel({
-    center: false,
-    items: 1,
-    loop: true,
-    stagePadding: 0,
-    margin: 20,
-    autoplay: true,
-    autoHeight: true,
-    nav: true,
-    navText: ['‹', '›'],
-  });
 
   //aos
   AOS.init({
@@ -24,7 +13,7 @@
   $('nav a').on('click', function () {
     $('html, body').animate(
       {
-        scrollTop: $($(this).attr('href')).offset().top,
+        scrollTop: $($(this).attr('href')).offset().top - 100,
       },
       {
         duration: 1000,
@@ -33,9 +22,12 @@
     );
   });
 
-  $('.menu-bar').on('click', function (e) {
-    e.preventDefault();
-    $('nav').toggleClass('hide-menu');
-    $(this).toggleClass('active');
+  // Sticky Navbar
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 0) {
+      $('.navbar').addClass('nav-sticky');
+    } else {
+      $('.navbar').removeClass('nav-sticky');
+    }
   });
 })(jQuery);
